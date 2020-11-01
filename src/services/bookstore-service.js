@@ -1,12 +1,11 @@
 export default class BookstoreService {
-
     data = [
         {
-            id:1,
+            id: 1,
             title: 'Deep Work: Rules for Focused Success in a Distracted World',
             author: 'Cal Newport',
             price: 16,
-            coverImage:'https://m.media-amazon.com/images/I/81ngZpLkktL._AC_UY218_.jpg'
+            coverImage: 'https://m.media-amazon.com/images/I/81ngZpLkktL._AC_UY218_.jpg'
         },
 
         {
@@ -26,17 +25,17 @@ export default class BookstoreService {
         }
     ];
 
-
     getBooks() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if (Math.random() > 0.95) {
+                if (Math.random()>0.99) {
                     reject(new Error("Something bad happened"))
-                } else {
+                }
+                else {
                     resolve(this.data)
                 }
             }, 700);
-        });
+        })
     }
 
 }

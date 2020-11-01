@@ -1,29 +1,25 @@
-import React from "react";
+import React, {Component} from 'react';
 import {Route, Switch} from "react-router-dom";
-import {HomePage, CartPage} from "../pages";
-import ShopHeader from "../shop-header";
+import HomePage from "../pages/home-page";
+import CartPage from "../pages/cart-page";
+import ShopHeader from "../shop-header/shop-header"
 
-import './app.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+import "./app.css"
 
-const App = () => {
-    return (
-        <main className="container ">
-            {/*<ShopHeader numItems={5} total={210}/>*/}
-            <ShopHeader />
-            <Switch>
-                <Route path="/"
-                       component={HomePage}
-                       exact/>
+class App extends Component {
+    render() {
+        return (
+            <div className="app container">
+                <ShopHeader/>
+                <Switch>
+                    <Route path="/" component={HomePage} exact/>
+                    <Route path="/cart" component={CartPage}/>
+                </Switch>
+            </div>
+        );
+    }
+}
 
-                <Route path="/cart"
-                       component={CartPage}
-                />
-            </Switch>
-        </main>
-
-    )
-};
+App.propTypes = {};
 
 export default App;

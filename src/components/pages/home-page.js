@@ -1,15 +1,10 @@
 import React from "react";
-import BookList from "../book-list";
-import ShoppingCartTable from "../shopping-cart-table";
+import BookList from "../book-list/book-list";
 
-const HomePage=()=>{
-    return (
-        <div>
-            <BookList />
-            <ShoppingCartTable/>
-        </div>
-
-    )
-};
+const HomePage = () => {
+    return <div>
+        <BookList/>
+    </div>
+}
 
 export default HomePage;

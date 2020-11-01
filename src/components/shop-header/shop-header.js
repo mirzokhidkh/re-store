@@ -1,41 +1,33 @@
 import React from "react";
-import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import {connect} from "react-redux"
 
-import "./shop-header.css"
+import "./shop-header.css";
 
 const ShopHeader = ({numItems, total}) => {
     return (
-        <header className="shop-header row">
+        <header className="shop-header">
             <Link to="/">
-                <div className="logo text-dark">ReStore</div>
+                <div className="logo text-dark">BookStore</div>
             </Link>
             <Link to="/cart">
                 <div className="shopping-cart">
                     <i className="cart-icon fa fa-shopping-cart"/>
-                    {numItems} items (${total})
+                    {numItems} items ${total ? total : 0}
                 </div>
             </Link>
         </header>
     )
-};
+}
 
-
-const mapStateToProps = ({shopHeader:{numItems,total}}) => {
+const mapStateToProps = ({shoppingCart: {cartItems, orderTotal}}) => {
+    const nums = cartItems.reduce((total, item) => {
+        return total + item.count;
+    }, 0)
     return {
-        numItems,
-        total
+        numItems: nums,
+        total: orderTotal
     }
-};
-
-// const mapStateToProps = ({shoppingCart: {cartItems, orderTotal}}) => {
-//     const nums=cartItems.reduce((total,value)=>{
-//         return total+value.count;
-//     },0);
-//     return {
-//         numItems: nums,
-//         total: orderTotal
-//     }
-// };
+}
 
 export default connect(mapStateToProps)(ShopHeader);

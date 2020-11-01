@@ -1,10 +1,18 @@
-.shopping-cart-table .total{
-    text-align: right;
-    font-size: 1.3rem;
-    margin-right: 10px;
+.shop-cart-table{
+    margin-top: 50px;
 }
 
-.shopping-cart-table button{
-    margin-left: 5px;
-    margin-top: 5px;
+table{
+    background-color: aliceblue;
+}
+
+
+.buttons button{
+    margin-right: 5px;
+}
+
+.total{
+    float: right;
+    font-size: 1.4rem;
+    font-weight: bolder;
 }
