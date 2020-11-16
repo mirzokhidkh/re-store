@@ -18,6 +18,17 @@ const booksError = (error) => {
     }
 }
 
+const fetchBooks = (bookstoreService) => () => (dispatch) => {
+    dispatch(booksRequested());
+    bookstoreService.getBooks()
+        .then((data) => dispatch(booksLoaded(data)))
+        .catch((err) => dispatch(booksError(err)));
+}
+
+export {
+    fetchBooks
+}
+
 export const bookAddedToCart = (bookId) => {
     return {
         type: 'BOOK_ADDED_TO_CART',
@@ -40,13 +51,3 @@ export const allBookRemovedFromCart = (bookId) => {
 }
 
 
-const fetchBooks = (bookstoreService) => () => (dispatch) => {
-    dispatch(booksRequested());
-    bookstoreService.getBooks()
-        .then((data) => dispatch(booksLoaded(data)))
-        .catch((err) => dispatch(booksError(err)));
-}
-
-export {
-    fetchBooks
-}

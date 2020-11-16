@@ -18,3 +18,19 @@
     margin-right: 10px;
     color: cadetblue;
 }
+
+@media screen and (max-width: 576px) {
+
+    .logo {
+        font-size: 1.9rem;
+    }
+    .shopping-cart{
+        font-size: 1.3rem;
+    }
+
+    .cart-icon{
+        font-size: 1.6rem;
+        margin-right: 5px;
+    }
+
+}

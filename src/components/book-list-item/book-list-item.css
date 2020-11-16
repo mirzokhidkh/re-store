@@ -34,3 +34,80 @@
 .add-to-cart {
     margin-top: 20px;
 }
+
+
+@media screen and (max-width: 992px){
+    .book-title, .book-price {
+        font-size: 1.2rem;
+    }
+
+    .book-author {
+        font-size: 1rem;
+    }
+
+    .add-to-cart {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .book-title {
+        font-size: 1.1rem;
+    }
+
+    .book-author {
+        font-size: .9rem;
+    }
+
+    .book-price {
+        font-size: 1.3rem;
+    }
+
+    .add-to-cart {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (max-width: 430px){
+    .book-cover img {
+        width: 150px;
+        height: 150px;
+        margin: 0 10px 10px 0;
+
+    }
+
+    .book-title {
+        font-size: .9rem;
+    }
+
+    .book-author {
+        font-size: .85rem;
+    }
+
+    .book-price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart {
+        margin-top: 10px;
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width: 300px){
+
+    .book-list-item {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .book-cover img {
+        width: 170px;
+        height: 170px;
+        margin: 0 10px 0 0;
+    }
+}

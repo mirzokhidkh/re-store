@@ -24,7 +24,7 @@ class ShoppingCartTable extends Component {
                     <td>{count}</td>
                     <td>${total}</td>
                     <td>
-                        <div className="btn-group-sm buttons">
+                        <div className="buttons">
                             <button className="btn btn-outline-danger"
                                     onClick={() => onDelete(id)}
                             ><i className="fa fa-trash"/>
@@ -67,7 +67,7 @@ class ShoppingCartTable extends Component {
                 </table>
 
                 <div className="total">
-                    {total ? `Total: ${total} ` : null}
+                    {total ? `Total:  $${total} ` : null}
                 </div>
             </div>
         )
